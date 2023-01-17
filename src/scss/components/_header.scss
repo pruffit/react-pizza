@@ -2,8 +2,10 @@
 
 .header {
   border-bottom: 1px solid $gray-line;
-  padding: 40px 0;
-
+  padding: 20px 0;
+  @include _Tablet{
+    padding: 40px 0;
+  }
   .container {
     display: flex;
     align-items: center;
@@ -14,19 +16,29 @@
     display: flex;
 
     img {
-      margin-right: 15px;
+      margin-right: 10px;
+      @include _Tablet{
+        margin-right: 15px;
+      }
     }
 
     h1 {
       color: #181818;
-      font-size: 24px;
+      font-size: 18px;
       letter-spacing: 1%;
       text-transform: uppercase;
       font-weight: 800;
+      @include _Tablet{
+        font-size: 24px;
+      }
     }
 
     p {
       color: #7b7b7b;
+      font-size: 16px;
+      @include _Tablet{
+        font-size: 18px;
+      }
     }
   }
 }

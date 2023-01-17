@@ -11,7 +11,6 @@
   transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
   border: 1px solid transparent;
   @include noselect();
-
   &,
   span {
     color: #fff;
@@ -93,6 +92,10 @@
     background-color: rgba(255, 255, 255, 0.25);
     margin-left: 14px;
     margin-right: 14px;
+    display: none;
+    @include _Tablet{
+      display: initial;
+    }
   }
 
   &--add {
@@ -131,18 +134,41 @@
 
   &--cart {
     display: flex;
+    justify-content: center;
     align-items: center;
     line-height: 23px;
-    padding: 12px 25px;
-
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    min-width: initial;
+    @include _Tablet{
+      align-items: initial;
+      justify-content: initial;
+      width: initial;
+      height: initial;
+      min-width: 100px;
+      padding: 12px 25px;
+    }
     svg {
-      margin-right: 8px;
+      margin-right: 1px;
       margin-bottom: 1px;
+      @include _Tablet{
+        margin-right: 8px;
+      }
     }
 
     span {
       font-weight: 600;
-      font-size: 16px;
+      font-size: 12px;
+      &:first-child{
+        display: none;
+      }
+      @include _Tablet{
+        font-size: 16px;
+        &:first-child {
+          display: initial;
+        }
+      }
     }
   }
 }

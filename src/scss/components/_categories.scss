@@ -1,9 +1,11 @@
 @import '../variables';
 
 .categories {
+  width: 100%;
+  overflow: auto;
   ul {
     display: flex;
-
+    width: 100%;
     li {
       background-color: #f9f9f9;
       padding: 13px 30px;

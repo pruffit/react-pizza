@@ -1,4 +1,5 @@
 @import './variables';
+@import './mixins';
 @import './libs/normalize';
 
 @import 'components/all';
@@ -8,31 +9,53 @@ body {
 }
 
 .wrapper {
-  width: calc(100vw - 100px);
+  width: calc(100vw - 30px);
   height: 100%;
   background-color: #fff;
-  margin: 50px auto;
+  margin: 15px auto;
   border-radius: 10px;
   max-width: 1400px;
+  @include _Tablet{
+    width: calc(100vw - 100px);
+    margin: 50px auto;
+  }
 }
 
 .content {
-  padding: 40px 0;
-
+  padding: 20px 0;
+  @include _Tablet{
+    padding: 40px 0;
+  }
   &__title {
     margin: 35px 0;
   }
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    @include _Tablet{
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+    @include _Laptop{
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    @include _Desktop{
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 30px;
+    }
   }
 
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column-reverse;
+    @include _Desktop{
+      flex-direction: row;
+    }
   }
 }
 
@@ -103,6 +126,10 @@ body {
         color: darken($color: #b6b6b6, $amount: 50);
       }
     }
+  }
+
+  &__items{
+    display: block;
   }
 
   &__item {
